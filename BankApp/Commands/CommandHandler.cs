@@ -9,17 +9,17 @@ namespace BankApp.Commands
 {
     public static class CommandHandler
     {
-        private static Dictionary<string, ICommand> _registeredCommands;
+        public static Dictionary<string, ICommand> RegisteredCommands;
 
         public static bool TryExecuteCommand(string commandName, ArraySegment<string> args, out string response)
         {
-            if (_registeredCommands == null)
+            if (RegisteredCommands == null)
             {
                 response = "Command not found";
                 return false;
             }
 
-            if (_registeredCommands.TryGetValue(commandName, out ICommand command))
+            if (RegisteredCommands.TryGetValue(commandName, out ICommand command))
             {
                 return command.Execute(args, out response);
             }
@@ -35,7 +35,7 @@ namespace BankApp.Commands
                 return false;
             }
 
-            _registeredCommands.Add(command.Command, command);
+            RegisteredCommands.Add(command.Command, command);
             return true;
         }
 
@@ -43,5 +43,7 @@ namespace BankApp.Commands
         {
             return TryRegisterCommand(typeof(T));
         }
+
+        
     }
 }
