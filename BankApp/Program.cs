@@ -11,7 +11,7 @@ namespace BankApp
             CommandHandler.TryRegisterCommand<CreateAccountCommand>();
             CommandHandler.TryRegisterCommand<DeleteAccountCommand>();
             CommandHandler.TryRegisterCommand<DepositMoneyCommand>();
-            CommandHandler.TryRegisterCommand<GetAllAccoundsCommand>();
+            CommandHandler.TryRegisterCommand<GetAllAccountsCommand>();
             CommandHandler.TryRegisterCommand<TransferMoneyCommand>();
             CommandHandler.TryRegisterCommand<WithdrawMoneyCommand>();
 
