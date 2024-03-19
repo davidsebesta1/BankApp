@@ -38,6 +38,9 @@ namespace BankApp.Commands.Cmds
                 }
 
                 account.Finance -= (decimal)amount;
+
+                response = "Success";
+                return true;
             }
 
             response = "Please add arguments";

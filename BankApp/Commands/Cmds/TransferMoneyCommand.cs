@@ -53,6 +53,9 @@ namespace BankApp.Commands.Cmds
 
                 accountReceiver.Finance += (decimal)amount;
                 accountSender.Finance -= (decimal)amount;
+
+                response = "Success";
+                return true;
             }
 
             response = "Please add required arguments";

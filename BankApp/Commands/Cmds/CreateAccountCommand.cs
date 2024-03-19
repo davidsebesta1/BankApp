@@ -11,7 +11,7 @@ namespace BankApp.Commands.Cmds
     {
         public string Command => "AddAccount";
 
-        public string Description => "Adds a user account";
+        public string Description => "Adds a user account, Arguments: [first name] [last name]";
 
         public bool Execute(ArraySegment<string> args, out string response)
         {
