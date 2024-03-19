@@ -1,5 +1,6 @@
 ﻿using BankApp.Commands.Cmds;
 using BankApp.Commands;
+using BankApp.ConsoleHandler;
 
 namespace BankApp
 {
@@ -8,6 +9,12 @@ namespace BankApp
         static void Main(string[] args)
         {
             CommandHandler.TryRegisterCommand<CreateAccountCommand>();
+            CommandHandler.TryRegisterCommand<DeleteAccountCommand>();
+            CommandHandler.TryRegisterCommand<DepositMoneyCommand>();
+            CommandHandler.TryRegisterCommand<TransferMoneyCommand>();
+            CommandHandler.TryRegisterCommand<WithdrawMoneyCommand>();
+
+            ConsoleManager.Init();
         }
     }
 }

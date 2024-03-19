@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BankApp.Commands.Cmds
 {
-    public class DepositMoneyCommand : ICommand
+    public class WithdrawMoneyCommand : ICommand
     {
-        public string Command => "deposit";
+        public string Command => "withdraw";
 
-        public string Description => "Deposits specified amount of money, Arguments: [accountID] [amount]";
+        public string Description => "Withdraw specified amount of money from specified account, Arguments: [accountID] [amount]";
 
         public bool Execute(ArraySegment<string> args, out string response)
         {
@@ -37,7 +37,7 @@ namespace BankApp.Commands.Cmds
                     return false;
                 }
 
-                account.Finance -= (decimal)amount;
+                account.Finance += (decimal)amount;
 
                 response = "Success";
                 return true;
