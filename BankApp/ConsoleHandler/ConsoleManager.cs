@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BankApp.Commands;
+using BankApp.Commands.Cmds;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +16,10 @@ namespace BankApp.ConsoleHandler
             {
                 string input = Console.ReadLine();
 
+                foreach (var commandEntry in CommandHandler.RegisteredCommands)
+                {
+                    Console.WriteLine($"Command: {commandEntry.Key}, Description: {commandEntry.Value.Description}");
+                }
 
             }
         }
