@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankApp.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,17 @@ namespace BankApp.Commands.Cmds
 
         public bool Execute(ArraySegment<string> args, out string response)
         {
-            
+            if(args.Count == 2)
+            {
+                BankAccount acc = new BankAccount(args[0], args[1]);
+                BankAccount.AllAccounts.Add(acc);
+
+                response = "Account created";
+                return true;
+            }
+
+            response = "Please add arguments";
+            return false;
         }
     }
 }
