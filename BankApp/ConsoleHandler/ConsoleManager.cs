@@ -1,10 +1,4 @@
 ﻿using BankApp.Commands;
-using BankApp.Commands.Cmds;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankApp.ConsoleHandler
 {
@@ -18,7 +12,7 @@ namespace BankApp.ConsoleHandler
                 string input = Console.ReadLine();
                 string[] arguments = input.Split(' ');
 
-                if (!CommandHandler.TryExecuteCommand(arguments[0],  new ArraySegment<string>(arguments, 1, arguments.Length - 1), out string response))
+                if (!CommandHandler.TryExecuteCommand(arguments[0], new ArraySegment<string>(arguments, 1, arguments.Length - 1), out string response))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(response);

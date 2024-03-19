@@ -1,9 +1,4 @@
 ﻿using BankApp.Objects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankApp.Commands.Cmds
 {
@@ -15,7 +10,7 @@ namespace BankApp.Commands.Cmds
 
         public bool Execute(ArraySegment<string> args, out string response)
         {
-            if(args.Count == 2)
+            if (args.Count == 2)
             {
                 BankAccount acc = new BankAccount(args[0], args[1]);
                 BankAccount.AllAccounts.Add(acc);

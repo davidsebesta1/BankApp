@@ -1,5 +1,5 @@
-﻿using BankApp.Commands.Cmds;
-using BankApp.Commands;
+﻿using BankApp.Commands;
+using BankApp.Commands.Cmds;
 using BankApp.ConsoleHandler;
 
 namespace BankApp
@@ -14,6 +14,7 @@ namespace BankApp
             CommandHandler.TryRegisterCommand<GetAllAccoundsCommand>();
             CommandHandler.TryRegisterCommand<TransferMoneyCommand>();
             CommandHandler.TryRegisterCommand<WithdrawMoneyCommand>();
+            CommandHandler.TryRegisterCommand<GetHistoryCommand>();
 
             ConsoleManager.Init();
         }

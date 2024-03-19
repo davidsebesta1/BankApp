@@ -1,9 +1,4 @@
 ﻿using BankApp.Objects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BankApp.Commands.Cmds
 {
@@ -17,17 +12,26 @@ namespace BankApp.Commands.Cmds
         {
             if (args.Count == 1)
             {
-                long accId;
-                if (!long.TryParse(args[0], out accId))
+                if (!long.TryParse(args[0], out long accId))
                 {
                     response = "Account id is invalid";
                     return false;
                 }
 
-                
+                response = string.Empty;
+                if (AccountLog.Logs.TryGetValue(accId, out var logs))
+                {
+                    foreach (var log in logs)
+                    {
+                        response += $"{log.Command.Command} - {log.Stamp}";
+                    }
 
-                response = "Success";
-                return true;
+                    return true;
+                }
+
+
+                response = "No logs found for this account";
+                return false;
             }
 
             response = "Please add arguments";
