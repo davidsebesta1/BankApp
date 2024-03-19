@@ -25,9 +25,7 @@ namespace propojeniSDS
             }
         }
 
-        /// <summary>
-        ///     Metoda pro připojení k databázi. Data pro připojeí se nachází v konfiguračním souboru App.config
-        /// </summary>
+       
         private PripojeniKDS()
         {
             var connectionStringBuilder = new SqlConnectionStringBuilder();
@@ -39,21 +37,13 @@ namespace propojeniSDS
 
             connectionS = connectionStringBuilder.ConnectionString;
         }
-        /// <summary>
-        ///     Metoda vracející connection string
-        /// </summary>
-        /// <returns></returns>
+        
         public string GetConnectionString()
         {
             return connectionS;
         }
 
-        /// <summary>
-        ///     Metoda pro posílání query požadavkků (využáván pro select query)
-        /// </summary>
-        /// <param name="query"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
+    
         #region Queries Methods
         public int ExecuteNonQuery(string query, params SqlParameter[] parameters)
         {
@@ -84,12 +74,7 @@ namespace propojeniSDS
         }
 
 
-        /// <summary>
-        ///   Metoda pro posílání query požadavků (využáván pro insert, ... query)
-        /// </summary>
-        /// <param name="query"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
+        
         public DataTable ExecuteQuery(string query, params SqlParameter[] parameters)
         {
             try
@@ -121,12 +106,7 @@ namespace propojeniSDS
 
             return null;
         }
-        /// <summary>
-        ///       Metoda pro posílání qeery požadavků 
-        /// </summary>
-        /// <param name="query"></param>
-        /// <param name="parameters"></param>
-        /// <returns></returns>
+ 
         public int ExecuteScalarInt(string query, params SqlParameter[] parameters)
         {
             try
