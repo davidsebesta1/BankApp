@@ -34,6 +34,7 @@ namespace BankApp.Commands.Cmds
 
                 account.Finance += (decimal)amount;
 
+                AccountLog.Log(accId, this);
                 response = "Success";
                 return true;
             }

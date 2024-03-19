@@ -49,6 +49,7 @@ namespace BankApp.Commands.Cmds
                 accountReceiver.Finance += (decimal)amount;
                 accountSender.Finance -= (decimal)amount;
 
+                AccountLog.Log(accountSender, this);
                 response = "Success";
                 return true;
             }
