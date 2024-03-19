@@ -18,7 +18,7 @@ namespace BankApp.Commands.Cmds
         {
             if(args.Count == 0) 
             {
-                response = "There is no accound to";
+                response = "There is no accound to delete";
                 return false;
             }
 
