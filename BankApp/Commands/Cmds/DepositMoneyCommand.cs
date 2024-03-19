@@ -9,7 +9,7 @@ namespace BankApp.Commands.Cmds
 {
     public class DepositMoneyCommand : ICommand
     {
-        public string Command => "deposit";
+        public string Command => "Deposit";
 
         public string Description => "Deposits specified amount of money, Arguments: [accountID] [amount]";
 
@@ -37,7 +37,7 @@ namespace BankApp.Commands.Cmds
                     return false;
                 }
 
-                account.Finance -= (decimal)amount;
+                account.Finance += (decimal)amount;
 
                 response = "Success";
                 return true;

@@ -9,13 +9,13 @@ namespace BankApp.Commands.Cmds
 {
     public class DeleteAccountCommand : ICommand
     {
-        public string Command => "deleteAccount";
+        public string Command => "DeleteAccount";
 
         public string Description => "Deletes account with specified ID, Arguments: [accountID]";
 
         public bool Execute(ArraySegment<string> args, out string response)
         {
-            if (args.Count == 2)
+            if (args.Count == 1)
             {
                 long accIdSender;
                 if (!long.TryParse(args[0], out accIdSender))

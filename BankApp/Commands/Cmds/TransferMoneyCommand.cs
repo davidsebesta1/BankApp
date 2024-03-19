@@ -9,7 +9,7 @@ namespace BankApp.Commands.Cmds
 {
     public class TransferMoneyCommand : ICommand
     {
-        public string Command => "transfer";
+        public string Command => "Transfer";
 
         public string Description => "Transfers specified amount of money from one account to another, Arguments: [senderAccId] [targetAccId] [Amount]";
 

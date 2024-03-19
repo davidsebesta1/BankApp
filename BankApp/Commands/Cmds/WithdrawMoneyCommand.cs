@@ -9,7 +9,7 @@ namespace BankApp.Commands.Cmds
 {
     public class WithdrawMoneyCommand : ICommand
     {
-        public string Command => "withdraw";
+        public string Command => "Withdraw";
 
         public string Description => "Withdraw specified amount of money from specified account, Arguments: [accountID] [amount]";
 
