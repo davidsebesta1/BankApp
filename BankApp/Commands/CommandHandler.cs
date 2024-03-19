@@ -9,7 +9,7 @@ namespace BankApp.Commands
 {
     public static class CommandHandler
     {
-        public static Dictionary<string, ICommand> RegisteredCommands;
+        public static Dictionary<string, ICommand> RegisteredCommands = new Dictionary<string, ICommand>();
 
         public static bool TryExecuteCommand(string commandName, ArraySegment<string> args, out string response)
         {
@@ -43,7 +43,5 @@ namespace BankApp.Commands
         {
             return TryRegisterCommand(typeof(T));
         }
-
-        
     }
 }
